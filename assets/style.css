@@ -1,0 +1,69 @@
+/* PEP Solutions — stile condiviso (sito + manuale del marchio).
+   Colori e font: vedi /brand/ (manuale) e brand/ nel repository. */
+@font-face { font-family: "Montserrat"; src: url("fonts/montserrat.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --peperone: #C2361F;        /* rosso primario */
+  --peperone-scuro: #9E2A1C;
+  --peperone-chiaro: #D9472C;
+  --antracite: #26343F;       /* testi e logotipo */
+  --ardesia: #5B6673;         /* testi secondari */
+  --pane: #FAF6EF;            /* fondo crema */
+  --crosta: #EAD9BC;          /* accento caldo */
+  --bianco: #FFFFFF;
+  --titoli: "Montserrat", system-ui, sans-serif;
+  --testo: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--testo); color: var(--antracite); background: var(--pane); line-height: 1.6; font-size: 1.0625rem; }
+a { color: var(--peperone); }
+img { max-width: 100%; }
+section, .top, footer { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+section { padding-top: 72px; padding-bottom: 72px; }
+h1, h2, h3 { font-family: var(--titoli); line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1 { font-weight: 800; }
+h2 { font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.4rem); }
+h3 { font-weight: 700; font-size: 1.15rem; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
+.brand img { display: block; height: 56px; width: auto; }
+nav { display: flex; align-items: center; gap: 22px; }
+nav a { color: var(--antracite); text-decoration: none; font-weight: 600; }
+nav a:not(.btn) { display: none; }
+@media (min-width: 760px) { nav a:not(.btn) { display: inline; } }
+
+.btn { display: inline-block; background: var(--peperone); color: var(--bianco); text-decoration: none; font-family: var(--titoli); font-weight: 700; padding: 14px 28px; border-radius: 999px; transition: transform .15s, background .15s; }
+.btn:hover { background: var(--peperone-scuro); transform: translateY(-1px); }
+nav .btn.small, .btn.small { padding: 9px 18px; color: var(--bianco); }
+
+.kicker { text-transform: uppercase; letter-spacing: .2em; font-family: var(--titoli); font-weight: 700; color: var(--peperone); font-size: .8rem; margin: 0 0 14px; }
+.hero { display: grid; gap: 32px; align-items: center; padding-top: 40px; }
+.hero h1 { font-size: clamp(2.5rem, 7vw, 4.4rem); }
+.hero h1 span { color: var(--peperone); }
+.lead { font-size: 1.2rem; color: var(--ardesia); max-width: 34em; margin: 0 0 30px; }
+.hero-mark { width: min(62vw, 300px); justify-self: center; }
+@media (min-width: 860px) { .hero { grid-template-columns: 1.4fr 1fr; padding-top: 72px; } }
+
+.story { background: var(--bianco); border-radius: 24px; max-width: 1040px; padding: 56px 32px; }
+.story p { font-size: 1.1rem; max-width: 46em; }
+.duo { display: grid; gap: 20px; margin-top: 28px; }
+.duo > div { background: var(--pane); border-left: 6px solid var(--crosta); border-radius: 12px; padding: 20px 24px; }
+.duo > div:last-child { border-left-color: var(--peperone); }
+.duo p { margin: 0; font-size: 1rem; }
+@media (min-width: 720px) { .duo { grid-template-columns: 1fr 1fr; } }
+
+.cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.cards article { background: var(--bianco); border-radius: 16px; padding: 24px; border-top: 4px solid var(--peperone); }
+.cards p { margin: 0; color: var(--ardesia); }
+
+.promise ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.promise li { font-size: 1.2rem; padding-left: 30px; position: relative; }
+.promise li::before { content: ""; position: absolute; left: 0; top: .5em; width: 13px; height: 13px; border-radius: 50%; background: var(--peperone); }
+
+.contact { text-align: center; background: var(--antracite); color: var(--bianco); border-radius: 24px; max-width: 1040px; margin-bottom: 40px; }
+.contact p { color: #C9D1DA; font-size: 1.15rem; margin: 0 0 28px; }
+
+footer { padding-bottom: 32px; color: var(--ardesia); font-size: .9rem; text-align: center; }
+footer a { color: var(--ardesia); }
